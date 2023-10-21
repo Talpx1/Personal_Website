@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: CascadiaMono;
+    src: url('../assets/fonts/CascadiaMono.ttf');
+}
+
+@font-face {
+    font-family: Schoolbell;
+    src: url('../assets/fonts/Schoolbell.ttf');
+}
+
+:root {   
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0 70px;
+    border: 0;
+
+    min-width: 320px;
+    min-height: 100vh;
+
+    font-size: 16px;
+}
+
+span.svg-wrapper {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 0;
+}
+
+span.svg-wrapper.logo>svg {
+    width: 70px;
+    height: auto;
+}
+
+span.svg-wrapper.contact-icon>svg {
+    width: 15px;
+    height: auto;
+}
+
+span.svg-wrapper.external-link>svg {
+    width: 12px;
+    height: auto;
+}

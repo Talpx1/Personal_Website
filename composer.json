@@ -1,0 +1,21 @@
+{
+    "name": "talpx1/personal_website",
+    "description": "Personal Website Project",
+    "type": "project",
+    "license": "All Rights Reserved",
+    "authors": [
+        {
+            "name": "Talpx1",
+            "email": "software@simonecerruti.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "pestphp/pest": "^2.24"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
