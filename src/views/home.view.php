@@ -5,14 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= t("Welcome") ?> | Simone Cerruti</title>
     <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#040f0f">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Simone Cerruti">
+    <meta name="application-name" content="Simone Cerruti">
+    <meta name="msapplication-TileColor" content="#040f0f">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#030c0c">
 </head>
 <body class="flex flex-col justify-between text-light bg-dark font-primary">
+    <?php partial('intro') ?>
+
     <?php partial('header') ?>
+    
+    <?php partial('bg_blobs') ?>
 
     <main class="text-center flex flex-col content-center gap-28 items-center">
         <div class="flex flex-col justify-center gap-5">
-            <h1 class="font-bold text-6xl"><?= t("Hi, I'm") ?> <span class="font-accent text-7xl">Simone</span> :) </h1>
-            <h2 class="font-bold text-4xl"><?= t('A') ?> <span class="font-accent text-5xl"><?= t('full-stack developer') ?></span>.</h2>
+            <h1 class="font-bold text-6xl"><?= t("Hi, I'm") ?> <span class="font-accent text-7xl rainbow-shine">Simone</span> :) </h1>
+            <h2 class="font-bold text-4xl"><?= t('A') ?> <span class="font-accent text-5xl rainbow-shine"><?= t('full-stack developer') ?></span>.</h2>
         </div>
         <nav class="flex flex-row gap-52 content-center text-2xl">
             <a class="font-bold" href="https://portfolio.simonecerruti.com"><?= t('Projects') ?></a>

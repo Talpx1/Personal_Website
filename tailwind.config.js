@@ -11,6 +11,9 @@ module.exports = {
         primary: ['CascadiaMono', 'monospace', 'Courier New'],
         accent: ['Schoolbell', 'Helvetica', 'sans-serif'],
       },
+      width: {
+        "3/1": "width: 300%"
+      }
     },
   },
   plugins: [],

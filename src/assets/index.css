@@ -17,7 +17,7 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;    
 }
 
 body {
@@ -29,26 +29,481 @@ body {
     min-height: 100vh;
 
     font-size: 16px;
+
+    backdrop-filter: blur(100px);
 }
 
 span.svg-wrapper {
     margin: 0;
     padding: 0;
     border: 0;
-    line-height: 0;
+    line-height: 0;    
 }
 
-span.svg-wrapper.logo>svg {
-    width: 70px;
+span.svg-wrapper>svg {
     height: auto;
+    width: 100%;
 }
 
-span.svg-wrapper.contact-icon>svg {
-    width: 15px;
-    height: auto;
+@keyframes rainbowShine{
+    0% {
+        background-image: linear-gradient(100deg, hsl(0, 100%, 50%) 0%, theme('colors.light'), 5%);
+    }
+    1% {
+        background-image: linear-gradient(100deg, theme('colors.light') 1%, hsl(4, 100%, 50%) 6%, theme('colors.light') 11%);
+    }
+    2% {
+        background-image: linear-gradient(100deg, theme('colors.light') 2%, hsl(8, 100%, 50%) 7%, theme('colors.light') 12%);
+    }
+    3% {
+        background-image: linear-gradient(100deg, theme('colors.light') 3%, hsl(12, 100%, 50%) 8%, theme('colors.light') 13%);
+    }
+    4% {
+        background-image: linear-gradient(100deg, theme('colors.light') 4%, hsl(16, 100%, 50%) 9%, theme('colors.light') 14%);
+    }
+    5% {
+        background-image: linear-gradient(100deg, theme('colors.light') 5%, hsl(20, 100%, 50%) 10%, theme('colors.light') 15%);
+    }
+    6% {
+        background-image: linear-gradient(100deg, theme('colors.light') 6%, hsl(24, 100%, 50%) 11%, theme('colors.light') 16%);
+    }
+    7% {
+        background-image: linear-gradient(100deg, theme('colors.light') 7%, hsl(28, 100%, 50%) 12%, theme('colors.light') 17%);
+    }
+    8% {
+        background-image: linear-gradient(100deg, theme('colors.light') 8%, hsl(32, 100%, 50%) 13%, theme('colors.light') 18%);
+    }
+    9% {
+        background-image: linear-gradient(100deg, theme('colors.light') 9%, hsl(36, 100%, 50%) 14%, theme('colors.light') 19%);
+    }
+    10% {
+        background-image: linear-gradient(100deg, theme('colors.light') 10%, hsl(40, 100%, 50%) 15%, theme('colors.light') 20%);
+    }
+    11% {
+        background-image: linear-gradient(100deg, theme('colors.light') 11%, hsl(44, 100%, 50%) 16%, theme('colors.light') 21%);
+    }
+    12% {
+        background-image: linear-gradient(100deg, theme('colors.light') 12%, hsl(48, 100%, 50%) 17%, theme('colors.light') 22%);
+    }
+    13% {
+        background-image: linear-gradient(100deg, theme('colors.light') 13%, hsl(52, 100%, 50%) 18%, theme('colors.light') 23%);
+    }
+    14% {
+        background-image: linear-gradient(100deg, theme('colors.light') 14%, hsl(56, 100%, 50%) 19%, theme('colors.light') 24%);
+    }
+    15% {
+        background-image: linear-gradient(100deg, theme('colors.light') 15%, hsl(60, 100%, 50%) 20%, theme('colors.light') 25%);
+    }
+    16% {
+        background-image: linear-gradient(100deg, theme('colors.light') 16%, hsl(64, 100%, 50%) 21%, theme('colors.light') 26%);
+    }
+    17% {
+        background-image: linear-gradient(100deg, theme('colors.light') 17%, hsl(68, 100%, 50%) 22%, theme('colors.light') 27%);
+    }
+    18% {
+        background-image: linear-gradient(100deg, theme('colors.light') 18%, hsl(72, 100%, 50%) 23%, theme('colors.light') 28%);
+    }
+    19% {
+        background-image: linear-gradient(100deg, theme('colors.light') 19%, hsl(76, 100%, 50%) 24%, theme('colors.light') 29%);
+    }
+    20% {
+        background-image: linear-gradient(100deg, theme('colors.light') 20%, hsl(80, 100%, 50%) 25%, theme('colors.light') 30%);
+    }
+    21% {
+        background-image: linear-gradient(100deg, theme('colors.light') 21%, hsl(84, 100%, 50%) 26%, theme('colors.light') 31%);
+    }
+    22% {
+        background-image: linear-gradient(100deg, theme('colors.light') 22%, hsl(88, 100%, 50%) 27%, theme('colors.light') 32%);
+    }
+    23% {
+        background-image: linear-gradient(100deg, theme('colors.light') 23%, hsl(92, 100%, 50%) 28%, theme('colors.light') 33%);
+    }
+    24% {
+        background-image: linear-gradient(100deg, theme('colors.light') 24%, hsl(96, 100%, 50%) 29%, theme('colors.light') 34%);
+    }
+    25% {
+        background-image: linear-gradient(100deg, theme('colors.light') 25%, hsl(100, 100%, 50%) 30%, theme('colors.light') 35%);
+    }
+    26% {
+        background-image: linear-gradient(100deg, theme('colors.light') 26%, hsl(104, 100%, 50%) 31%, theme('colors.light') 36%);
+    }
+    27% {
+        background-image: linear-gradient(100deg, theme('colors.light') 27%, hsl(108, 100%, 50%) 32%, theme('colors.light') 37%);
+    }
+    28% {
+        background-image: linear-gradient(100deg, theme('colors.light') 28%, hsl(112, 100%, 50%) 33%, theme('colors.light') 38%);
+    }
+    29% {
+        background-image: linear-gradient(100deg, theme('colors.light') 29%, hsl(116, 100%, 50%) 34%, theme('colors.light') 39%);
+    }
+    30% {
+        background-image: linear-gradient(100deg, theme('colors.light') 30%, hsl(120, 100%, 50%) 35%, theme('colors.light') 40%);
+    }
+    31% {
+        background-image: linear-gradient(100deg, theme('colors.light') 31%, hsl(124, 100%, 50%) 36%, theme('colors.light') 41%);
+    }
+    32% {
+        background-image: linear-gradient(100deg, theme('colors.light') 32%, hsl(128, 100%, 50%) 37%, theme('colors.light') 42%);
+    }
+    33% {
+        background-image: linear-gradient(100deg, theme('colors.light') 33%, hsl(132, 100%, 50%) 38%, theme('colors.light') 43%);
+    }
+    34% {
+        background-image: linear-gradient(100deg, theme('colors.light') 34%, hsl(136, 100%, 50%) 39%, theme('colors.light') 44%);
+    }
+    35% {
+        background-image: linear-gradient(100deg, theme('colors.light') 35%, hsl(140, 100%, 50%) 40%, theme('colors.light') 45%);
+    }
+    36% {
+        background-image: linear-gradient(100deg, theme('colors.light') 36%, hsl(144, 100%, 50%) 41%, theme('colors.light') 46%);
+    }
+    37% {
+        background-image: linear-gradient(100deg, theme('colors.light') 37%, hsl(148, 100%, 50%) 42%, theme('colors.light') 47%);
+    }
+    38% {
+        background-image: linear-gradient(100deg, theme('colors.light') 38%, hsl(152, 100%, 50%) 43%, theme('colors.light') 48%);
+    }
+    39% {
+        background-image: linear-gradient(100deg, theme('colors.light') 39%, hsl(156, 100%, 50%) 44%, theme('colors.light') 49%);
+    }
+    40% {
+        background-image: linear-gradient(100deg, theme('colors.light') 40%, hsl(160, 100%, 50%) 45%, theme('colors.light') 50%);
+    }
+    41% {
+        background-image: linear-gradient(100deg, theme('colors.light') 41%, hsl(164, 100%, 50%) 46%, theme('colors.light') 51%);
+    }
+    42% {
+        background-image: linear-gradient(100deg, theme('colors.light') 42%, hsl(168, 100%, 50%) 47%, theme('colors.light') 52%);
+    }
+    43% {
+        background-image: linear-gradient(100deg, theme('colors.light') 43%, hsl(172, 100%, 50%) 48%, theme('colors.light') 53%);
+    }
+    44% {
+        background-image: linear-gradient(100deg, theme('colors.light') 44%, hsl(176, 100%, 50%) 49%, theme('colors.light') 54%);
+    }
+    45% {
+        background-image: linear-gradient(100deg, theme('colors.light') 45%, hsl(180, 100%, 50%) 50%, theme('colors.light') 55%);
+    }
+    46% {
+        background-image: linear-gradient(100deg, theme('colors.light') 46%, hsl(184, 100%, 50%) 51%, theme('colors.light') 56%);
+    }
+    47% {
+        background-image: linear-gradient(100deg, theme('colors.light') 47%, hsl(188, 100%, 50%) 52%, theme('colors.light') 57%);
+    }
+    48% {
+        background-image: linear-gradient(100deg, theme('colors.light') 48%, hsl(192, 100%, 50%) 53%, theme('colors.light') 58%);
+    }
+    49% {
+        background-image: linear-gradient(100deg, theme('colors.light') 49%, hsl(196, 100%, 50%) 54%, theme('colors.light') 59%);
+    }
+    50% {
+        background-image: linear-gradient(100deg, theme('colors.light') 50%, hsl(200, 100%, 50%) 55%, theme('colors.light') 60%);
+    }
+    51% {
+        background-image: linear-gradient(100deg, theme('colors.light') 51%, hsl(204, 100%, 50%) 56%, theme('colors.light') 61%);
+    }
+    52% {
+        background-image: linear-gradient(100deg, theme('colors.light') 52%, hsl(208, 100%, 50%) 57%, theme('colors.light') 62%);
+    }
+    53% {
+        background-image: linear-gradient(100deg, theme('colors.light') 53%, hsl(212, 100%, 50%) 58%, theme('colors.light') 63%);
+    }
+    54% {
+        background-image: linear-gradient(100deg, theme('colors.light') 54%, hsl(216, 100%, 50%) 59%, theme('colors.light') 64%);
+    }
+    55% {
+        background-image: linear-gradient(100deg, theme('colors.light') 55%, hsl(220, 100%, 50%) 60%, theme('colors.light') 65%);
+    }
+    56% {
+        background-image: linear-gradient(100deg, theme('colors.light') 56%, hsl(224, 100%, 50%) 61%, theme('colors.light') 66%);
+    }
+    57% {
+        background-image: linear-gradient(100deg, theme('colors.light') 57%, hsl(228, 100%, 50%) 62%, theme('colors.light') 67%);
+    }
+    58% {
+        background-image: linear-gradient(100deg, theme('colors.light') 58%, hsl(232, 100%, 50%) 63%, theme('colors.light') 68%);
+    }
+    59% {
+        background-image: linear-gradient(100deg, theme('colors.light') 59%, hsl(236, 100%, 50%) 64%, theme('colors.light') 69%);
+    }
+    60% {
+        background-image: linear-gradient(100deg, theme('colors.light') 60%, hsl(240, 100%, 50%) 65%, theme('colors.light') 70%);
+    }
+    61% {
+        background-image: linear-gradient(100deg, theme('colors.light') 61%, hsl(244, 100%, 50%) 66%, theme('colors.light') 71%);
+    }
+    62% {
+        background-image: linear-gradient(100deg, theme('colors.light') 62%, hsl(248, 100%, 50%) 67%, theme('colors.light') 72%);
+    }
+    63% {
+        background-image: linear-gradient(100deg, theme('colors.light') 63%, hsl(252, 100%, 50%) 68%, theme('colors.light') 73%);
+    }
+    64% {
+        background-image: linear-gradient(100deg, theme('colors.light') 64%, hsl(256, 100%, 50%) 69%, theme('colors.light') 74%);
+    }
+    65% {
+        background-image: linear-gradient(100deg, theme('colors.light') 65%, hsl(260, 100%, 50%) 70%, theme('colors.light') 75%);
+    }
+    66% {
+        background-image: linear-gradient(100deg, theme('colors.light') 66%, hsl(264, 100%, 50%) 71%, theme('colors.light') 76%);
+    }
+    67% {
+        background-image: linear-gradient(100deg, theme('colors.light') 67%, hsl(268, 100%, 50%) 72%, theme('colors.light') 77%);
+    }
+    68% {
+        background-image: linear-gradient(100deg, theme('colors.light') 68%, hsl(272, 100%, 50%) 73%, theme('colors.light') 78%);
+    }
+    69% {
+        background-image: linear-gradient(100deg, theme('colors.light') 69%, hsl(276, 100%, 50%) 74%, theme('colors.light') 79%);
+    }
+    70% {
+        background-image: linear-gradient(100deg, theme('colors.light') 70%, hsl(280, 100%, 50%) 75%, theme('colors.light') 80%);
+    }
+    71% {
+        background-image: linear-gradient(100deg, theme('colors.light') 71%, hsl(284, 100%, 50%) 76%, theme('colors.light') 81%);
+    }
+    72% {
+        background-image: linear-gradient(100deg, theme('colors.light') 72%, hsl(288, 100%, 50%) 77%, theme('colors.light') 82%);
+    }
+    73% {
+        background-image: linear-gradient(100deg, theme('colors.light') 73%, hsl(292, 100%, 50%) 78%, theme('colors.light') 83%);
+    }
+    74% {
+        background-image: linear-gradient(100deg, theme('colors.light') 74%, hsl(296, 100%, 50%) 79%, theme('colors.light') 84%);
+    }
+    75% {
+        background-image: linear-gradient(100deg, theme('colors.light') 75%, hsl(300, 100%, 50%) 80%, theme('colors.light') 85%);
+    }
+    76% {
+        background-image: linear-gradient(100deg, theme('colors.light') 76%, hsl(304, 100%, 50%) 81%, theme('colors.light') 86%);
+    }
+    77% {
+        background-image: linear-gradient(100deg, theme('colors.light') 77%, hsl(308, 100%, 50%) 82%, theme('colors.light') 87%);
+    }
+    78% {
+        background-image: linear-gradient(100deg, theme('colors.light') 78%, hsl(312, 100%, 50%) 83%, theme('colors.light') 88%);
+    }
+    79% {
+        background-image: linear-gradient(100deg, theme('colors.light') 79%, hsl(316, 100%, 50%) 84%, theme('colors.light') 89%);
+    }
+    80% {
+        background-image: linear-gradient(100deg, theme('colors.light') 80%, hsl(320, 100%, 50%) 85%, theme('colors.light') 90%);
+    }
+    81% {
+        background-image: linear-gradient(100deg, theme('colors.light') 81%, hsl(324, 100%, 50%) 86%, theme('colors.light') 91%);
+    }
+    82% {
+        background-image: linear-gradient(100deg, theme('colors.light') 82%, hsl(328, 100%, 50%) 87%, theme('colors.light') 92%);
+    }
+    83% {
+        background-image: linear-gradient(100deg, theme('colors.light') 83%, hsl(332, 100%, 50%) 88%, theme('colors.light') 93%);
+    }
+    84% {
+        background-image: linear-gradient(100deg, theme('colors.light') 84%, hsl(336, 100%, 50%) 89%, theme('colors.light') 94%);
+    }
+    85% {
+        background-image: linear-gradient(100deg, theme('colors.light') 85%, hsl(340, 100%, 50%) 90%, theme('colors.light') 95%);
+    }
+    86% {
+        background-image: linear-gradient(100deg, theme('colors.light') 86%, hsl(344, 100%, 50%) 91%, theme('colors.light') 96%);
+    }
+    87% {
+        background-image: linear-gradient(100deg, theme('colors.light') 87%, hsl(348, 100%, 50%) 92%, theme('colors.light') 97%);
+    }
+    88% {
+        background-image: linear-gradient(100deg, theme('colors.light') 88%, hsl(352, 100%, 50%) 93%, theme('colors.light') 98%);
+    }
+    89% {
+        background-image: linear-gradient(100deg, theme('colors.light') 89%, hsl(356, 100%, 50%) 94%, theme('colors.light') 99%);
+    }
+    90% {
+        background-image: linear-gradient(100deg, theme('colors.light') 90%, hsl(360, 100%, 50%) 95%, theme('colors.light') 100%);
+    }
+    91% {
+        background-image: linear-gradient(100deg, theme('colors.light') 91%, hsl(364, 100%, 50%) 96%, theme('colors.light') 101%);
+    }
+    92% {
+        background-image: linear-gradient(100deg, theme('colors.light') 92%, hsl(368, 100%, 50%) 97%, theme('colors.light') 102%);
+    }
+    93% {
+        background-image: linear-gradient(100deg, theme('colors.light') 93%, hsl(372, 100%, 50%) 98%, theme('colors.light') 103%);
+    }
+    94% {
+        background-image: linear-gradient(100deg, theme('colors.light') 94%, hsl(376, 100%, 50%) 99%, theme('colors.light') 104%);
+    }
+    95% {
+        background-image: linear-gradient(100deg, theme('colors.light') 95%, hsl(380, 100%, 50%) 100%, theme('colors.light') 105%);
+    }
+    96% {
+        background-image: linear-gradient(100deg, theme('colors.light') 96%, hsl(384, 100%, 50%) 101%, theme('colors.light') 106%);
+    }
+    97% {
+        background-image: linear-gradient(100deg, theme('colors.light') 97%, hsl(388, 100%, 50%) 102%, theme('colors.light') 107%);
+    }
+    98% {
+        background-image: linear-gradient(100deg, theme('colors.light') 98%, hsl(392, 100%, 50%) 103%, theme('colors.light') 108%);
+    }
+    99% {
+        background-image: linear-gradient(100deg, theme('colors.light') 99%, hsl(396, 100%, 50%) 104%, theme('colors.light') 109%);
+    }
+    100% {
+        background-image: linear-gradient(100deg, theme('colors.light'), theme('colors.light'));
+    }
 }
 
-span.svg-wrapper.external-link>svg {
-    width: 12px;
-    height: auto;
+.rainbow-shine{
+    color: transparent;
+    background-image: linear-gradient(100deg, theme('colors.light'), theme('colors.light'));
+    background-clip: text;
+    background-repeat: no-repeat;
+    animation: 1s rainbowShine 1s cubic-bezier(.86,0,.07,1) 1;
+}
+
+@keyframes slideOutUp {
+    0% {
+        top:0;
+    }
+
+    100% {
+        top:-100%;
+
+    }
+}
+
+#intro{
+    animation: 1s slideOutUp .5s cubic-bezier(.86,0,.07,1) 1;
+    animation-fill-mode: forwards;
+}
+
+#bg-blobs {
+    filter: blur(10px);
+}
+
+#bg-blobs > svg {
+    filter: blur(50px) drop-shadow(0 0 0.10rem rgba(255, 255, 255, 0.2));
+    image-rendering: optimizeSpeed;
+}
+
+#bg_blob_1{
+    transform: translate(30%, 15%);
+    animation: 50s moveBlob1 ease-in-out infinite;
+}
+
+#bg_blob_2{
+    transform: translate(-20%, 40%);
+    animation: 90s moveBlob2 ease-in-out infinite;
+}
+
+#bg_blob_3{
+    transform: translate(15%, -35%);
+    animation: 120s moveBlob3 ease-in-out infinite;
+}
+
+#bg_blob_4{
+    transform: translate(-50%, -10%);
+    animation: 80s moveBlob4 ease-in-out infinite;
+}
+@keyframes moveBlob4 {
+    0%{
+        transform: translate(-50%, -10%);
+    }
+
+    20%{
+        transform: translate(40%, 10%);
+    }
+
+    40%{
+        transform: translate(-30%, 80%);
+    }
+
+    60%{
+        transform: translate(15%, -75%);
+    }
+
+    80%{
+        transform: translate(80%, 0%);
+    }
+
+    100%{
+        transform: translate(-50%, -10%);
+    }
+}
+
+
+@keyframes moveBlob3 {
+    0%{
+        transform: translate(15%, -35%);
+    }
+
+    20%{
+        transform: translate(70%, -55%);
+    }
+
+    40%{
+        transform: translate(10%, 90%);
+    }
+
+    60%{
+        transform: translate(-80%, 5%);
+    }
+
+    80%{
+        transform: translate(50%, 15%);
+    }
+
+    100%{
+        transform: translate(15%, -35%);
+    }
+}
+
+@keyframes moveBlob2 {
+    0%{
+        transform: translate(-20%, 40%);
+    }
+
+    20%{
+        transform: translate(40%, 90%);
+    }
+
+    40%{
+        transform: translate(50%, 45%);
+    }
+
+    60%{
+        transform: translate(70%, 75%);
+    }
+
+    80%{
+        transform: translate(45%, -50%);
+    }
+
+    100%{
+        transform: translate(-20%, 40%);
+    }
+}
+
+@keyframes moveBlob1 {
+    0%{
+        transform: translate(30%, 15%);
+    }
+
+    20%{
+        transform: translate(22%, 0%);
+    }
+
+    40%{
+        transform: translate(-50%, 60%);
+    }
+
+    60%{
+        transform: translate(75%, 40%);
+    }
+
+    80%{
+        transform: translate(60%, -20%);
+    }
+
+    100%{
+        transform: translate(30%, 15%);
+    }
 }

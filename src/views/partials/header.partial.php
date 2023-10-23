@@ -1,6 +1,6 @@
 <header class="flex flex-row justify-between items-center py-5">    
     <a href="/" class="text-light">
-        <?php loadSvg("/assets/svgs/simone_cerruti_logo.svg", "logo")?>
+        <?php loadSvg("/assets/svgs/simone_cerruti_logo.svg", "w-[70px]")?>
     </a>
     <div class="flex flex-row gap-5 items-center text-light">
         <a href="/en">EN</a>
