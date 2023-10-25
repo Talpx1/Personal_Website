@@ -30,7 +30,11 @@ body {
 
     font-size: 16px;
 
-    backdrop-filter: blur(100px);
+    backdrop-filter: blur(100px);    
+}
+
+body, a, button {
+    cursor: none
 }
 
 span.svg-wrapper {
@@ -375,7 +379,7 @@ span.svg-wrapper>svg {
     animation-fill-mode: forwards;
 }
 
-#bg-blobs {
+#bg-blobs {    
     filter: blur(10px);
 }
 
@@ -403,6 +407,7 @@ span.svg-wrapper>svg {
     transform: translate(-50%, -10%);
     animation: 80s moveBlob4 ease-in-out infinite;
 }
+
 @keyframes moveBlob4 {
     0%{
         transform: translate(-50%, -10%);
@@ -428,7 +433,6 @@ span.svg-wrapper>svg {
         transform: translate(-50%, -10%);
     }
 }
-
 
 @keyframes moveBlob3 {
     0%{
@@ -506,4 +510,34 @@ span.svg-wrapper>svg {
     100%{
         transform: translate(30%, 15%);
     }
+}
+
+@keyframes noise{
+    0% {
+        transform: translate(0,0);
+    }
+    25% {
+        transform: translate(10%,10%);
+    }
+    50% {
+        transform: translate(20%,0);
+    }
+    75% {
+        transform: translate(10%,-10%);
+    }
+    100% {
+        transform: translate(0,0);
+    }
+}
+
+#noise{
+    width: 600%;
+    position: fixed;
+    left: -300%;
+    top: -300%;
+    aspect-ratio: 1;
+    background-image: url('../assets/images/noise.png');
+    opacity: .2;
+    animation: noise 3s steps(5) infinite;
+    pointer-events: none;
 }
