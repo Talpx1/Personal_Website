@@ -1440,37 +1440,39 @@ span.svg-wrapper>svg {
 }
 
 @keyframes noise{
-  0% {
-    transform: translate(0,0);
+  from {
+    transform: rotateZ(0);
   }
 
-  25% {
-    transform: translate(10%,10%);
-  }
-
-  50% {
-    transform: translate(20%,0);
-  }
-
-  75% {
-    transform: translate(10%,-10%);
-  }
-
-  100% {
-    transform: translate(0,0);
+  to{
+    transform: rotateZ(360deg);
   }
 }
 
 #noise{
   width: 600%;
+  aspect-ratio: 1;
   position: fixed;
   left: -300%;
-  top: -300%;
-  aspect-ratio: 1;
+  top: -150%;
   background-image: url('../assets/images/noise.png');
+  background-repeat: repeat;
   opacity: .2;
-  animation: noise 3s steps(5) infinite;
+  animation: noise 2s steps(45) infinite;
   pointer-events: none;
+}
+
+#cursor{
+  transition: width 150ms;
+}
+
+#cursor.intersecting::after{
+  width: 80%;
+}
+
+#cursor.intersecting{
+  mix-blend-mode: difference;
+  width: 50px;
 }
 
 .after\:absolute::after {
@@ -1508,16 +1510,9 @@ span.svg-wrapper>svg {
   width: 0px;
 }
 
-.after\:w-full::after {
+.after\:w-1\/3::after {
   content: var(--tw-content);
-  width: 100%;
-}
-
-.after\:scale-\[30\%\]::after {
-  content: var(--tw-content);
-  --tw-scale-x: 30%;
-  --tw-scale-y: 30%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  width: 33.333333%;
 }
 
 .after\:rounded-full::after {
@@ -1535,6 +1530,11 @@ span.svg-wrapper>svg {
   content: var(--tw-content);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.after\:duration-150::after {
+  content: var(--tw-content);
   transition-duration: 150ms;
 }
 

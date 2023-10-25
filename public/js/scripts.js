@@ -7,10 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
         mouseX = event.clientX
         mouseY = event.clientY
 
-        cursor();
+        cursor()
+        cursorIntersection()
     }
 
-    blobMouseFollow();
+    blobMouseFollow()
 })
 
 function cursor() {
@@ -69,6 +70,14 @@ function blobMouseFollow(event) {
         if (blobScale >= 1.5) isGrowing = false
         if (blobScale <= .5) isGrowing = true
     }
+}
 
+function cursorIntersection() {
+    const cursor = document.querySelector("#cursor");
+
+    const interactables = [...document.body.querySelectorAll("a, button")]
+    const hover = document.querySelectorAll("a:hover,button:hover").item(0)
+
+    cursor.classList.toggle("intersecting", interactables.includes(hover))
 
 }

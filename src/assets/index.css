@@ -513,31 +513,37 @@ span.svg-wrapper>svg {
 }
 
 @keyframes noise{
-    0% {
-        transform: translate(0,0);
+    from {
+        transform: rotateZ(0);
     }
-    25% {
-        transform: translate(10%,10%);
-    }
-    50% {
-        transform: translate(20%,0);
-    }
-    75% {
-        transform: translate(10%,-10%);
-    }
-    100% {
-        transform: translate(0,0);
+
+    to{
+        transform: rotateZ(360deg);
     }
 }
 
 #noise{
     width: 600%;
+    aspect-ratio: 1;
     position: fixed;
     left: -300%;
-    top: -300%;
-    aspect-ratio: 1;
+    top: -150%;
     background-image: url('../assets/images/noise.png');
+    background-repeat: repeat;
     opacity: .2;
-    animation: noise 3s steps(5) infinite;
+    animation: noise 2s steps(45) infinite;
     pointer-events: none;
+}
+#cursor{
+    transition: width 150ms;
+}
+
+#cursor.intersecting::after{
+    width: 80%;
+}
+
+
+#cursor.intersecting{
+    mix-blend-mode: difference;
+    width: 50px;
 }
