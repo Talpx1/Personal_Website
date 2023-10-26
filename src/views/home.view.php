@@ -40,6 +40,8 @@
     </main>
     
     <?php partial('cursor') ?>
+
+    <?php partial('minigame') ?>
     
     <?php partial('footer') ?>    
 </body>

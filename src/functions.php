@@ -22,11 +22,3 @@ function partial(string $name): void {
 function view(string $name): void {
     require srcPath("views/{$name}.view.php");
 }
-
-function loadSvg(string $path, string $classes = ""): void {
-    ob_start();
-    require publicPath($path);
-    $svg = ob_get_clean();
-
-    echo "<span class='svg-wrapper {$classes}'>{$svg}</span>";
-}

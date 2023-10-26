@@ -33,20 +33,8 @@ body {
     backdrop-filter: blur(100px);    
 }
 
-body, a, button {
+body, a, button, .interactable {
     cursor: none
-}
-
-span.svg-wrapper {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    line-height: 0;    
-}
-
-span.svg-wrapper>svg {
-    height: auto;
-    width: 100%;
 }
 
 @keyframes rainbowShine{
@@ -546,4 +534,8 @@ span.svg-wrapper>svg {
 #cursor.intersecting{
     mix-blend-mode: difference;
     width: 50px;
+}
+
+.minigame_life_lost{
+    fill: none
 }
