@@ -1,7 +1,7 @@
 <div id="noise" class="-z-10"></div>
 
 <div id='bg-blobs' class="fixed min-w-full min-h-screen max-w-full max-h-screen -z-20 overflow-hidden left-0 top-0 flex justify-center items-center">
-    <svg xmlns="http://www.w3.org/2000/svg" width="204" height="235" viewBox="0 0 204 235" fill="none" id="cursor_blob" class="h-auto absolute z-10 mix-blend-difference top-0 left-0">
+    <svg xmlns="http://www.w3.org/2000/svg" width="204" height="235" viewBox="0 0 204 235" fill="none" id="cursor_blob" class="hidden xl:block h-auto absolute z-10 mix-blend-difference top-0 left-0">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M96.3334 17.9294C109.663 9.53888 123.877 -0.424608 139.623 0.0139838C154.726 0.434677 175.12 5.87365 179.745 20.2529C185.863 39.2755 168.19 58.0717 164.618 77.7317C162.953 86.8946 159.423 97.4757 164.268 105.43C173.747 120.993 205.153 124.156 203.967 142.339C202.942 158.055 168.393 146.569 160.689 160.308C151.286 177.078 171.367 200.783 161.835 217.48C154.237 230.788 133.362 238.736 119.055 233.237C100.487 226.1 100.838 194.052 82.2761 186.9C68.0972 181.437 51.839 212.219 39.9512 202.756C27.0606 192.495 49.1695 167.861 40.6462 153.764C33.3173 141.641 5.85734 152.164 1.26313 138.765C-3.1697 125.837 23.9014 118.683 23.932 105.016C23.9669 89.4306 -6.91023 77.6494 1.42937 64.4809C10.3719 50.3604 35.0918 66.9386 51.0991 62.1186C59.5726 59.5671 63.6929 50.0099 70.0222 43.8268C78.9006 35.1535 85.8288 24.5419 96.3334 17.9294Z" fill="#FDFFFC"/>
     </svg>
 

@@ -21,10 +21,6 @@
 }
 
 body {
-    margin: 0;
-    padding: 0 70px;
-    border: 0;
-
     min-width: 320px;
     min-height: 100vh;
 
@@ -33,8 +29,10 @@ body {
     backdrop-filter: blur(100px);    
 }
 
-body, a, button, .interactable {
-    cursor: none
+@media screen and (min-width: 1280px){
+    body, a, button, .interactable {
+        cursor: none
+    }
 }
 
 @keyframes rainbowShine{

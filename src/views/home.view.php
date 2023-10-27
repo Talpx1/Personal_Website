@@ -19,7 +19,7 @@
     <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
     <meta name="theme-color" content="#030c0c">
 </head>
-<body class="flex flex-col justify-between text-light bg-dark font-primary overflow-hidden">
+<body class="flex flex-col justify-between text-light bg-dark font-primary overflow-hidden m-0 border-0 border-none py-0 px-5 lg:px-20 ">
     
     <?php partial('intro') ?>
     
@@ -29,10 +29,10 @@
     
     <main class="text-center flex flex-col content-center gap-28 items-center">
         <div class="flex flex-col justify-center gap-5">
-            <h1 class="font-bold text-4xl tracking-widest"><?= t("Hi, I'm") ?> <span class="font-accent text-6xl rainbow-shine px-1">Simone</span> :) </h1>
-            <h2 class="font-bold text-2xl tracking-widest"><?= t('A') ?> <span class="font-accent text-4xl rainbow-shine px-1"><?= t('full-stack developer') ?></span>.</h2>
+            <h1 class="font-bold text-2xl lg:text-4xl tracking-widest"><?= t("Hi, I'm") ?> <span class="font-accent text-4xl lg:text-6xl rainbow-shine px-1">Simone</span> :) </h1>
+            <h2 class="font-bold text-xl lg:text-2xl tracking-widest"><?= t('A') ?> <span class="font-accent text-2xl lg:text-4xl rainbow-shine px-1"><?= t('full-stack developer') ?></span>.</h2>
         </div>
-        <nav class="flex flex-row gap-52 content-center text-xl">
+        <nav class="flex flex-row w-full md:w-2/3 lg:w-fit justify-between md:justify-evenly lg:gap-52 content-center text-l lg:text-xl">
             <a class="font-bold relative transition-all after:transition-all after:h-1 after:w-0 after:duration-300 after:block after:absolute after:bottom-0 after:left-0 hover:after:w-full hover:after:bg-light" href="https://portfolio.simonecerruti.com"><?= t('Projects') ?></a>
             <a class="font-bold relative transition-all after:transition-all after:h-1 after:w-0 after:duration-300 after:block after:absolute after:bottom-0 after:left-0 hover:after:w-full hover:after:bg-light" href="https://blog.simonecerruti.com">Blog</a>
             <a class="font-bold relative transition-all after:transition-all after:h-1 after:w-0 after:duration-300 after:block after:absolute after:bottom-0 after:left-0 hover:after:w-full hover:after:bg-light" href="/about"><?= t('About') ?></a>

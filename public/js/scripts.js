@@ -20,15 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
         mouseX = event.clientX
         mouseY = event.clientY
 
-        cursor()
-        cursorIntersection()
+        if (window.innerWidth >= 1280) {
+            cursor()
+            cursorIntersection()
+        }
     }
 
     document.onkeydown = (event) => {
         keysPressed[event.key] = true
 
-        if (event.key === ' ' || event.key === 'Escape') {
-            minigame(event.key === ' ')
+        if ((event.key === ' ' || event.key === 'Escape') && window.innerWidth >= 1280) {
+            toggleMinigame(event.key === ' ')
         }
     }
 
@@ -37,8 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     blobMouseFollow()
-    movePlayer()
 
+})
+
+window.addEventListener("resize", () => {
+    fitMinigameToScreen()
 })
 
 
@@ -128,14 +133,7 @@ function cursorIntersection() {
 // ######################## MINIGAME #########################
 // ###########################################################
 
-//TODO: rebuild game loop to use only one loop for ball and player
-//TODO: improve ball/death area interaction -> trigger as soon as ball touches death area
-//TODO: fix player/ball collision detection -> now if the ball hits the side of player while it is moving, the ball clips in player causing weird behaviors
 //TODO: animate UI
-//TODO: remove alert and create proper gameover
-//TODO: after losing life do countdown again
-//TODO: after losing game, do countdown again
-//TODO: stop animations on exit
 //TODO: on exit slide intro/stinger in
 //TODO: on start slide intro/stinger in
 
@@ -148,9 +146,6 @@ const PLAYER_VELOCITY_INCREASE_FACTOR = .2
 const MAX_PLAYER_VELOCITY = 10
 const INITIAL_LIVES_COUNT = 3
 
-let ballAnimation
-let playerAnimation
-
 let ballX = 0
 let ballY = 0
 let ballVelocityY = 0
@@ -159,25 +154,46 @@ let playerVelocity = INITIAL_BALL_VELOCITY
 
 let score = 0
 let lives = INITIAL_LIVES_COUNT
+let isGameover = false
 
-function minigame(start) {
+let minigameAnimation = null
+
+function toggleMinigame(active) {
     const minigameContainer = document.querySelector("#minigame")
-    document.querySelectorAll("body > *:not(#minigame)").forEach(e => e.classList.toggle('hidden', start))
-    minigameContainer.classList.toggle('hidden', !start)
-    minigameContainer.classList.toggle('flex', start)
 
+    document.querySelectorAll("body > *:not(#minigame)").forEach(e => e.classList.toggle('hidden', active))
+    minigameContainer.classList.toggle('hidden', !active)
+    minigameContainer.classList.toggle('flex', active)
+
+    active ? startMinigame() : stopMinigame()
+}
+
+function startMinigame() {
     resetMinigame()
-
-    if (!start) return;
 
     countdown()
 
-    setTimeout(moveBall, (COUNTDOWN_SECONDS * 1000))
+    setTimeout(minigameLoop, (COUNTDOWN_SECONDS * 1000))
+}
+
+function stopMinigame() {
+    cancelAnimationFrame(minigameAnimation)
+}
+
+function minigameLoop() {
+    moveBall()
+    movePlayer()
+    checkBallIntersections()
+
+    if (!isGameover) {
+        minigameAnimation = requestAnimationFrame(minigameLoop)
+    }
 }
 
 function countdown() {
     const countdownElement = document.querySelector("#minigame_countdown")
     countdownElement.textContent = COUNTDOWN_SECONDS
+    countdownElement.style.display = 'grid'
 
     let interval
     let seconds = COUNTDOWN_SECONDS - 1
@@ -195,24 +211,30 @@ function countdown() {
 
 function generateRandomBallVelocities() {
     return {
-        y: INITIAL_BALL_VELOCITY + (Math.random() / 4),
-        x: (Math.round(Math.random()) === 1 ? INITIAL_BALL_VELOCITY : -(INITIAL_BALL_VELOCITY)) + ((Math.random() / 2) * (Math.round(Math.random()) === 1 ? 1 : -1))
+        y: INITIAL_BALL_VELOCITY + parseFloat((Math.random() / 4).toFixed(2)),
+        x: (Math.round(Math.random()) === 1 ? INITIAL_BALL_VELOCITY : -(INITIAL_BALL_VELOCITY)) + (parseFloat((Math.random() / 2).toFixed(2)) * (Math.round(Math.random()) === 1 ? 1 : -1))
     }
 }
 
 function resetMinigame() {
     setScore(0)
     lives = INITIAL_LIVES_COUNT
-
-    document.querySelector("#minigame_score").textContent = score
-
-    const playerArea = document.querySelector("#minigame_player_movement_area")
-    document.querySelector("#minigame_game_area").style.width = `${playerArea.getBoundingClientRect().width}px`
+    isGameover = false
 
     document.querySelectorAll(".minigame_life.minigame_life_lost").forEach(e => e.classList.remove("minigame_life_lost"))
+    document.querySelector("#minigame_gameover").style.display = 'none'
+
+    fitMinigameToScreen()
 
     resetMinigamePositions()
     resetMinigameVelocities()
+}
+
+function fitMinigameToScreen() {
+    const playerAreaWidth = document.querySelector("#minigame_player_movement_area").getBoundingClientRect().width
+
+    document.querySelector("#minigame_game_area").style.width = `${playerAreaWidth}px`
+    document.querySelector("#minigame_player").style.width = `${playerAreaWidth / 20}px`
 }
 
 function setScore(newScore) {
@@ -225,9 +247,11 @@ function resetMinigamePositions() {
     ballY = 0
 
     const playerAreaWidth = document.querySelector("#minigame_player_movement_area").getBoundingClientRect().width
+    const player = document.querySelector("#minigame_player")
+    const ball = document.querySelector("#minigame_ball")
 
-    document.querySelector("#minigame_player").style.transform = `translateX(${(playerAreaWidth / 2)}px)`
-    document.querySelector("#minigame_ball").style.transform = `translate(0px, 0px)`
+    player.style.transform = `translateX(${((playerAreaWidth / 2) - (player.getBoundingClientRect().width / 2))}px)`
+    ball.style.transform = `translate(0px, 0px)`
 }
 
 function resetMinigameVelocities() {
@@ -238,15 +262,21 @@ function resetMinigameVelocities() {
     playerVelocity = INITIAL_PLAYER_SPEED
 }
 
+function minigameGameover() {
+    stopMinigame()
+
+    document.querySelector('#minigame_gameover_score').textContent = score
+
+    document.querySelector("#minigame_gameover").style.display = 'grid'
+
+}
+
 function removeLife() {
-    const remaining_lives = [...document.querySelectorAll(".minigame_life:not(.minigame_life_lost)")]
+    const remainingLives = [...document.querySelectorAll(".minigame_life:not(.minigame_life_lost)")]
 
-    remaining_lives.pop().classList.add("minigame_life_lost")
+    remainingLives.pop().classList.add("minigame_life_lost")
 
-    if (--lives === 0) {
-        alert("Game Over!")
-        resetMinigame()
-    }
+    if (--lives === 0) isGameover = true
 
 }
 
@@ -263,8 +293,6 @@ function movePlayer() {
     if (playerPos < 0) playerPos = 0
 
     player.style.transform = `translateX(${playerPos}px)`
-
-    playerAnimation = requestAnimationFrame(movePlayer)
 }
 
 
@@ -282,10 +310,6 @@ function moveBall() {
     if (ballY <= 0) ballVelocityY = -ballVelocityY
 
     ball.style.transform = `translate(${ballX}px, ${ballY}px)`
-
-    checkBallIntersections()
-
-    ballAnimation = requestAnimationFrame(moveBall)
 }
 
 function checkBallIntersections() {
@@ -298,7 +322,7 @@ function checkBallIntersections() {
 
     if (isBallInDeathArea()) {
         removeLife()
-        resetMinigamePositions()
+        isGameover ? minigameGameover() : resetMinigamePositions()
     }
 }
 
@@ -306,19 +330,19 @@ function isBallIntersectingPlayer() {
     const ball = document.querySelector("#minigame_ball").getBoundingClientRect();
     const player = document.querySelector("#minigame_player").getBoundingClientRect();
 
-    return !(
-        ((ball.y + ball.height) < (player.y)) ||
-        (ball.y > (player.y + player.height)) ||
-        ((ball.x + ball.width) < player.x) ||
-        (ball.x > (player.x + player.width))
-    )
+    const isOnTopOfPlayer = [player.top, player.top - 1, player.top + 1].includes(Math.round(ball.bottom))
+
+    return isOnTopOfPlayer &&
+        (ball.left >= player.left || ball.right >= player.left) &&
+        (ball.left <= player.right)
+
 }
 
 function isBallInDeathArea() {
     const ball = document.querySelector("#minigame_ball").getBoundingClientRect();
-    const death = document.querySelector("#minigame_death_area").getBoundingClientRect();
+    const player = document.querySelector("#minigame_player").getBoundingClientRect();
 
-    return ball.top >= death.bottom
+    return ball.top >= player.bottom
 }
 
 function increaseBallVelocity() {
