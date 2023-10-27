@@ -1,4 +1,4 @@
-<div id="minigame" class="min-w-full min-h-full max-h-full max-w-full absolute top-0 left-0 flex-col justify-between hidden p-5">
+<div id="minigame" class="min-w-full min-h-full max-h-full max-w-full absolute top-0 left-0 flex-col justify-between force-hidden p-5">
     <!-- UI -->
     <div class="flex justify-between items-center ">
         <div class="flex flex-row gap-2 items-center">

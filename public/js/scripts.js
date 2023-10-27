@@ -161,8 +161,8 @@ let minigameAnimation = null
 function toggleMinigame(active) {
     const minigameContainer = document.querySelector("#minigame")
 
-    document.querySelectorAll("body > *:not(#minigame)").forEach(e => e.classList.toggle('hidden', active))
-    minigameContainer.classList.toggle('hidden', !active)
+    document.querySelectorAll("body > *:not(#minigame)").forEach(e => e.classList.toggle('force-hidden', active))
+    minigameContainer.classList.toggle('force-hidden', !active)
     minigameContainer.classList.toggle('flex', active)
 
     active ? startMinigame() : stopMinigame()
