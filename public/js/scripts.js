@@ -38,6 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
         keysPressed[event.key] = false
     }
 
+    let isDark = shouldBeDark
+    document.querySelector("#toggle-dark-mode").addEventListener("click", () => {
+        isDark = !isDark
+        document.documentElement.classList.toggle(darkClass, isDark)
+    })
+
     blobMouseFollow()
 
 })
