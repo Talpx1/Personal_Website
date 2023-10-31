@@ -9,9 +9,20 @@
             "email": "software@simonecerruti.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "SC\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SC\\Tests\\": "tests/"
+        }
+    },
     "minimum-stability": "stable",
     "require-dev": {
-        "pestphp/pest": "^2.24"
+        "pestphp/pest": "^2.24",
+        "symfony/var-dumper": "^6.3"
     },
     "config": {
         "allow-plugins": {

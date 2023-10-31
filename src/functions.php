@@ -1,7 +1,19 @@
 <?php declare(strict_types=1);
+use SC\App;
 
-function t($key): string {
-    return $key; //TODO
+function t($key, ...$tags): string {
+    $translations = require(srcPath('lang')."/".app()->locale.".php");
+
+    $translation = $translations[$key] ?? $key;
+
+    foreach ($tags as $key => $tag) {
+        $tag_name = null; 
+        preg_match("/(?<=<)\w+/m", $tag, $tag_name);
+        $translation = str_replace("<{$key}>", $tag, $translation);
+        $translation = str_replace("</{$key}>", "</{$tag_name[0]}>", $translation);
+    }
+
+    return $translation;
 }
 
 function appPath(string $path=""): string {
@@ -21,4 +33,10 @@ function partial(string $name): void {
 
 function view(string $name): void {
     require srcPath("views/{$name}.view.php");
+}
+
+function app(): App {
+    global $app;
+
+    return $app;
 }
