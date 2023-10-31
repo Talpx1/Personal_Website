@@ -27,11 +27,13 @@ function srcPath(string $path=""): string {
     return appPath("src/{$path}");
 }
 
-function partial(string $name): void {
+function partial(string $name, array $params = []): void {
+    extract($params);
     require srcPath("views/partials/{$name}.partial.php");
 }
 
-function view(string $name): void {
+function view(string $name, array $params = []): void {
+    extract($params);
     require srcPath("views/{$name}.view.php");
 }
 

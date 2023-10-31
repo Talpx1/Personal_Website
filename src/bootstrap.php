@@ -1,9 +1,12 @@
 <?php declare(strict_types=1);
 
 use SC\App;
+use SC\Http\Routing\Router;
 
 $app = new App();
 
 $app->runMiddlewares();
 
-view('home');
+$router = new Router();
+
+$router->resolve();
