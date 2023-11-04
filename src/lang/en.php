@@ -11,4 +11,5 @@ return [
     "exit" => "Exit",
     "retry" => "Retry",
     "SPACE" => "SPACE",
+    "work_in_progress" => "Hi, I'm still working on this. Check back later!",
 ];

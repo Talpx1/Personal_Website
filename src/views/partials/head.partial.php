@@ -23,5 +23,5 @@
     <meta name="theme-color" content="#030c0c">
 
     <meta http-equiv="content-language" content="<?= app()->localeWithCountry() ?>">
-    <link rel="alternate" href="<?= "https://{$_SERVER['SERVER_NAME']}/".app()->alternateLocale() ?>" hreflang="<?= app()->alternateLocale() ?>" type="text/html">
+    <link rel="alternate" href="<?= (isset($_SERVER['SERVER_NAME']) ? "https://{$_SERVER['SERVER_NAME']}" : "" )."/".app()->alternateLocale() ?>" hreflang="<?= app()->alternateLocale() ?>" type="text/html">
 </head>

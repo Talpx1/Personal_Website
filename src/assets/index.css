@@ -273,7 +273,7 @@ html:not(.dark) #cursor.intersecting{
 }
 
 .minigame_life_lost{
-    fill: none
+    fill: none !important;
 }
 
 html *.force-hidden {

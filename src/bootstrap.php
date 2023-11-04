@@ -3,7 +3,7 @@
 use SC\App;
 use SC\Http\Routing\Router;
 
-$app = new App();
+$app = App::instance();
 
 $app->runMiddlewares();
 

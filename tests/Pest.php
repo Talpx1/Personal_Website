@@ -40,8 +40,3 @@ expect()->extend('toBeOne', function () {
 */
 
 require_once dirname(__DIR__)."/src/functions.php";
-
-function something()
-{
-    // ..
-}

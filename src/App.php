@@ -6,6 +6,8 @@ use SC\Http\Middlewares\DetectLocale;
 
 final class App {
 
+    protected static ?self $instance;
+
     protected array $middlewares = [
         DetectLocale::class
     ];
@@ -17,6 +19,16 @@ final class App {
     public readonly string $locale;
 
     private const DEFAULT_LOCALE = 'it';
+
+    private function __construct() {}
+
+    public static function instance(): self {
+        self::$instance ??= new self();
+        return self::$instance;
+    }
+    public static function dispose(): void {        
+        self::$instance = null;        
+    }
 
     public function runMiddlewares(): void {
         foreach ($this->middlewares as $middleware) {

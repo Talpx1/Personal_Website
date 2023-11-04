@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 use SC\App;
 
 function t($key, ...$tags): string {
@@ -38,7 +39,5 @@ function view(string $name, array $params = []): void {
 }
 
 function app(): App {
-    global $app;
-
-    return $app;
+    return App::instance();
 }

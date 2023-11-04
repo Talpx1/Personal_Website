@@ -58,3 +58,58 @@
     </svg>
 
 </div>
+
+<script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+        blobMouseFollow()
+    })
+
+    function blobMouseFollow() {
+        let blobX = 0
+        let blobY = 0
+
+        let blobRotation = 0
+        let blobScale = 1
+        let isGrowing = false
+
+        const blob = document.querySelector("#cursor_blob");
+
+        moveBlob()
+
+        function moveBlob() {
+            calculatePosition()
+            calculateRotation()
+            calculateScale()
+
+            blob.style.transform = `translate(${blobX}px, ${blobY}px) rotateZ(${blobRotation}deg) scale(${blobScale})`
+            requestAnimationFrame(moveBlob)
+        }
+
+        function calculatePosition() {
+            const halfBlobWidth = blob.getBoundingClientRect().width / 2
+            const halfBlobHeight = blob.getBoundingClientRect().height / 2
+
+            const finalX = mouseX - halfBlobWidth
+            const finalY = mouseY - halfBlobHeight
+
+            blobX += (finalX - blobX) / 40
+            blobY += (finalY - blobY) / 40
+
+        }
+
+        function calculateRotation() {
+            blobRotation += .05;
+
+            if (blobRotation === 360) {
+                blobRotation = 0
+            }
+        }
+
+        function calculateScale() {
+            blobScale += .0005 * (isGrowing ? 1 : -1)
+
+            if (blobScale >= 1.5) isGrowing = false
+            if (blobScale <= .5) isGrowing = true
+        }
+    }
+</script>
