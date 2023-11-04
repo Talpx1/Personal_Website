@@ -17,6 +17,8 @@ final class Router {
         
         if(empty($uri)) $uri = '/';
 
+        app()->setCurrentRoute($uri);
+
         [$controller, $method] = $this->routes[$uri];
 
         (new $controller)->{$method}();

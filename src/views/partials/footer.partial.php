@@ -1,7 +1,4 @@
 <footer class="flex flex-col justify-between py-5 content-center items-center gap-10">
-    <div class="hidden xl:flex flex-row gap-2 items-center content-center">
-        <?= t("press_space", '<div class="flex content-center items-center px-2 py-1 rounded-md border-dark dark:border-light border border-solid">') ?>      
-    </div>
     <nav class="flex flex-col lg:flex-row gap-3 lg:gap-0 lg:justify-between items-center w-fit lg:w-full">
         <div class="w-full lg:w-fit flex lg:flex-1 justify-start lg:justify-start">
             <a href="mailto:hello@simonecerruti.com" title="Email" 

@@ -876,6 +876,11 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -978,7 +983,10 @@ body {
 }
 
 @media screen and (min-width: 1280px){
-  body, a, button, .interactable {
+  body.home-page,
+    body.home-page a, 
+    body.home-page button, 
+    body.home-page .interactable {
     cursor: none
   }
 }

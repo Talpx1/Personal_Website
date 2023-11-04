@@ -17,6 +17,8 @@ final class App {
     protected array $locales_with_country = ['it' => "it-it", 'en' => 'en-us'];
     
     public readonly string $locale;
+    
+    protected string $current_route = '/';
 
     private const DEFAULT_LOCALE = 'it';
 
@@ -46,6 +48,14 @@ final class App {
 
     public function alternateLocale(): string {
         return array_values(array_diff($this->valid_locales, [$this->locale]))[0];
+    }    
+
+    public function setCurrentRoute(string $route): void {
+        $this->current_route = $route;
+    }
+
+    public function currentRoute(): string {
+        return $this->current_route ?? "/";
     }
 
 }

@@ -30,7 +30,10 @@ body {
 }
 
 @media screen and (min-width: 1280px){
-    body, a, button, .interactable {
+    body.home-page,
+    body.home-page a, 
+    body.home-page button, 
+    body.home-page .interactable {
         cursor: none
     }
 }

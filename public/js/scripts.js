@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let isDark = shouldBeDark
-    document.querySelector("#toggle-dark-mode").addEventListener("click", () => {
+    document.querySelector("#toggle-dark-mode")?.addEventListener("click", () => {
         isDark = !isDark
         document.documentElement.classList.toggle(darkClass, isDark)
     })
