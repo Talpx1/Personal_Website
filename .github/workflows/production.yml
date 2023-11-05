@@ -79,4 +79,8 @@ jobs:
           **/.gitignore
           **/phpunit.xml
           **/start_dev.sh
+          **/DOCKER_ENV
+          **/docker_tag
+          **/output.log
+
   
