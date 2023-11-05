@@ -64,11 +64,11 @@ jobs:
       run: mv public/ www/
 
     - name: FTP Deploy
-      uses: ftp.cluster029.hosting.ovh.net
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.samkirkland.com
-        username: ${{ secrets.user }}
-        password: ${{ secrets.ftp_password }}
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
         server-dir: /
         exclude: |
           **/.git*
