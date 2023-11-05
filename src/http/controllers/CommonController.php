@@ -8,8 +8,8 @@ class CommonController {
         view('home', ['title' => t('welcome')]);
     }
 
-    public function portfolio(): void {
-        view('portfolio', ['title' => t('portfolio')]);
+    public function projects(): void {
+        view('projects', ['title' => t('projects')]);
     }
     
     public function about(): void {

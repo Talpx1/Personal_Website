@@ -6,6 +6,7 @@ return [
     "a_fullstack_developer" => "Uno <0>sviluppatore full-stack</0>.",
     "about" => "Chi Sono",
     "projects" => "Progetti",
+    "blog" => "Blog",
     "press_space" => "pssst... premi <0>SPAZIO</0>",
     "score" => "Punteggio",
     "exit" => "Esci",

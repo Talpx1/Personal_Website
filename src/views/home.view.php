@@ -16,7 +16,7 @@
                 <h2 class="font-bold text-xl lg:text-2xl tracking-widest"><?= t('a_fullstack_developer', '<span class="font-accent text-2xl lg:text-4xl rainbow-underline px-1">') ?></h2>
             </div>
             <nav class="flex flex-row w-full md:w-2/3 lg:w-fit justify-between md:justify-evenly lg:gap-52 content-center text-l lg:text-xl">
-                <a class="font-bold relative transition-all after:transition-all after:h-1 after:w-0 after:duration-300 after:block after:absolute after:bottom-0 after:left-0 hover:after:w-full dark:hover:after:bg-light hover:after:bg-dark" href="/portfolio"><?= t('projects') ?></a>
+                <a class="font-bold relative transition-all after:transition-all after:h-1 after:w-0 after:duration-300 after:block after:absolute after:bottom-0 after:left-0 hover:after:w-full dark:hover:after:bg-light hover:after:bg-dark" href="/projects"><?= t('projects') ?></a>
                 <a class="font-bold relative transition-all after:transition-all after:h-1 after:w-0 after:duration-300 after:block after:absolute after:bottom-0 after:left-0 hover:after:w-full dark:hover:after:bg-light hover:after:bg-dark" href="/blog">Blog</a>
                 <a class="font-bold relative transition-all after:transition-all after:h-1 after:w-0 after:duration-300 after:block after:absolute after:bottom-0 after:left-0 hover:after:w-full dark:hover:after:bg-light hover:after:bg-dark" href="/about"><?= t('about') ?></a>
             </nav>

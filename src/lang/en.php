@@ -6,6 +6,7 @@ return [
     "a_fullstack_developer" => "A <0>full-stack developer</0>.",
     "about" => "About",
     "projects" => "Projects",
+    "blog" => "Blog",
     "press_space" => "pssst... press <0>SPACE</0>",
     "score" => "Score",
     "exit" => "Exit",
