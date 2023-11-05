@@ -50,17 +50,20 @@ jobs:
     - name: Setup Composer
       uses: php-actions/composer@v6
 
+    - name: Vendor Permissions
+      run: chmod -R 777 ./vendor
+
     - name: Install npm dependencies
       run: npm install --omit=dev
 
     - name: Install composer dependencies
-      run: composer install --no-dev --no-progress --no-cache
+      run: composer install --no-dev --no-progress --no-cache -o
 
     - name: Build CSS
-      run: npx tailwindcss -i /src/assets/index.css -o /public/css/style.css --minify
+      run: npx tailwindcss -i ./src/assets/index.css -o ./public/css/style.css --minify
 
     - name: Rename public to www 
-      run: mv public/ www/
+      run: mv ./public/ ./www/
 
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
