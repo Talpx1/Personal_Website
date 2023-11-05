@@ -3,11 +3,12 @@
     "description": "Personal Website Project",
     "type": "project",
     "license": "proprietary",
-    "homepage": "simonecerruti.com",
+    "homepage": "https://simonecerruti.com",
     "authors": [
         {
             "name": "Talpx1",
-            "email": "software@simonecerruti.com"
+            "email": "software@simonecerruti.com",
+            "homepage": "https://simonecerruti.com"
         }
     ],
     "autoload": {
