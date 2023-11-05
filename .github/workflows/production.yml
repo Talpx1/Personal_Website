@@ -51,7 +51,7 @@ jobs:
       uses: php-actions/composer@v6
 
     - name: Vendor Permissions
-      run: chmod -R 777 ./vendor
+      run: sudo chmod -R 777 ./vendor
 
     - name: Install npm dependencies
       run: npm install --omit=dev
