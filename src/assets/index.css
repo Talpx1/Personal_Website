@@ -102,10 +102,6 @@ body {
     max-height: 100dvh;
 }
 
-#bg-blobs {    
-    filter: blur(10px);
-}
-
 #bg-blobs > svg {
     filter: blur(50px) drop-shadow(0 0 0.10rem rgba(255, 255, 255, 0.2));
     image-rendering: optimizeSpeed;
