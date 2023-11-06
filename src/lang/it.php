@@ -13,4 +13,5 @@ return [
     "retry" => "Riprova",
     "SPACE" => "SPAZIO",
     "work_in_progress" => "Ciao, ci sto ancora lavorando. Ripassa più avanti!",
+    "meta_description" => "Simone Cerruti, un full-stack developer dall'Italia, con una forte passione per PHP & Laravel."
 ];
