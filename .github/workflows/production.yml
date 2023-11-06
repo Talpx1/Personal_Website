@@ -75,7 +75,8 @@ jobs:
         exclude: |
           **/.git*
           **/.git*/**
-          **/tests/
+          ./tests
+          **/tests/**
           **/.gitignore
           **/phpunit.xml
           **/start_dev.sh
