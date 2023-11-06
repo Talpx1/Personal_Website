@@ -25,8 +25,6 @@ body {
     min-height: 100dvh;
 
     font-size: 16px;
-
-    backdrop-filter: blur(100px);    
 }
 
 @media screen and (min-width: 1280px){
@@ -99,6 +97,7 @@ body {
 #intro{
     animation: 1s slideOutUp .5s cubic-bezier(.86,0,.07,1) 1;
     animation-fill-mode: forwards;
+    min-height: 100dvh;
 }
 
 #bg-blobs {    
