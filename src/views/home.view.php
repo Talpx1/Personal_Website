@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="<?= app()->locale ?>">
 <?php partial('head', ['title' => $title]) ?>
-<body class="home-page text-dark bg-light dark:text-light dark:bg-dark overflow-hidden">
-
-    <?php partial('bg_blobs') ?>
-
-    <?php partial('cursor') ?>
-
-    <div id="page-wrapper" class="w-full flex flex-col justify-between font-primary overflow-hidden m-0 border-0 border-none py-0 px-5 lg:px-20">
+<body class="flex flex-col justify-between font-primary overflow-hidden m-0 border-0 border-none py-0 px-5 lg:px-20 text-dark bg-light dark:text-light dark:bg-dark home-page">
+    
     <?php partial('intro') ?>
     
-    <?php partial('header') ?>    
+    <?php partial('header') ?>
+    
+    <?php partial('bg_blobs') ?>
     
     <main class="text-center flex flex-col content-center items-center justify-center grow">
         <div class="flex flex-col content-center gap-28 grow justify-center">
@@ -30,10 +27,10 @@
         </div>
     </main>
     
+    <?php partial('cursor') ?>
 
     <?php partial('minigame') ?>
 
-    <?php partial('footer') ?>   
-</div> 
+    <?php partial('footer') ?>    
 </body>
 </html>

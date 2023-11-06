@@ -969,12 +969,9 @@ video {
   -webkit-text-size-adjust: 100%;
 }
 
-body, #page-wrapper {
+body {
   min-width: 320px;
   min-height: 100dvh;
-}
-
-body {
   font-size: 16px;
   -webkit-backdrop-filter: blur(100px);
           backdrop-filter: blur(100px);
