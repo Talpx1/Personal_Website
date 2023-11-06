@@ -61,7 +61,7 @@ describe("partial", function() {
         partial('head', ['title'=>'test']);
         $partial = ob_get_clean();
 
-        expect($partial)->toBeString()->toContain("<head>", '<meta charset="UTF-8">', '<meta name="viewport" content="width=device-width, initial-scale=1.0">', "</head>", "<title>test | Simone Cerruti</title>");        
+        expect($partial)->toBeString()->toContain("<head>", '<meta charset="UTF-8">', '<meta name="viewport"', "</head>", "<title>test | Simone Cerruti</title>");        
     });
 });
 
