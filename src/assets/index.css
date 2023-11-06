@@ -98,6 +98,8 @@ body {
     animation: 1s slideOutUp .5s cubic-bezier(.86,0,.07,1) 1;
     animation-fill-mode: forwards;
     min-height: 100dvh;
+    height: 100dvh;
+    max-height: 100dvh;
 }
 
 #bg-blobs {    
