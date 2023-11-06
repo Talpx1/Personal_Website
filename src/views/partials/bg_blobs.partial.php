@@ -1,4 +1,4 @@
-<div id="noise" class="-z-10"></div>
+<div id="noise" class="-z-10 overflow-hidden"></div>
 
 <div id='bg-blobs' class="fixed min-w-full min-h-screen max-w-full max-h-screen -z-20 overflow-hidden left-0 top-0 flex justify-center items-center">
     <svg xmlns="http://www.w3.org/2000/svg" width="204" height="235" viewBox="0 0 204 235" fill="none" id="cursor_blob" class="hidden xl:block h-auto absolute z-10 mix-blend-overlay dark:mix-blend-difference top-0 left-0">
