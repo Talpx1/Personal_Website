@@ -14,16 +14,17 @@
     <img 
         src="/assets/images/bg_blobs/blob_cursor.png" 
         id="cursor_blob" 
-        class="hidden xl:block h-auto absolute z-10 mix-blend-overlay dark:mix-blend-difference top-0 left-0 brightness-0 dark:brightness-100" 
+        class="hidden xl:block h-auto absolute z-10 mix-blend-overlay dark:mix-blend-difference top-0 left-0 brightness-0 dark:brightness-100"
+        alt=""
     />
         
-    <img src="/assets/images/bg_blobs/blob_1.png" id="bg_blob_1" class="h-auto absolute z-0 /">
+    <img src="/assets/images/bg_blobs/blob_1.png" id="bg_blob_1" class="h-auto absolute z-0" alt=""/>
 
-    <img src="/assets/images/bg_blobs/blob_2.png" id="bg_blob_2" class="h-auto absolute z-0 /">
+    <img src="/assets/images/bg_blobs/blob_2.png" id="bg_blob_2" class="h-auto absolute z-0" alt=""/>
 
-    <img src="/assets/images/bg_blobs/blob_3.png" id="bg_blob_3" class="h-auto absolute z-0 /">
+    <img src="/assets/images/bg_blobs/blob_3.png" id="bg_blob_3" class="h-auto absolute z-0" alt=""/>
 
-    <img src="/assets/images/bg_blobs/blob_4.png" id="bg_blob_4" class="h-auto absolute z-0" />
+    <img src="/assets/images/bg_blobs/blob_4.png" id="bg_blob_4" class="h-auto absolute z-0" alt=""/>
 
 
 </div>

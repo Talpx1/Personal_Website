@@ -885,11 +885,11 @@ video {
 }
 
 .font-accent {
-  font-family: Schoolbell, Helvetica, sans-serif;
+  font-family: Schoolbell, Bradley Hand, cursive, Apple Chancery, Comic Sans MS, Comic Sans;
 }
 
 .font-primary {
-  font-family: CascadiaMono, monospace, Courier New;
+  font-family: CascadiaMono, Courier New, Courier, monospace;
 }
 
 .text-2xl {
@@ -962,6 +962,10 @@ video {
   transition-duration: 150ms;
 }
 
+.duration-500 {
+  transition-duration: 500ms;
+}
+
 .content-none {
   --tw-content: none;
   content: var(--tw-content);
@@ -971,12 +975,16 @@ video {
   font-family: CascadiaMono;
 
   src: url('../assets/fonts/CascadiaMono.ttf');
+
+  font-display: swap;
 }
 
 @font-face {
   font-family: Schoolbell;
 
   src: url('../assets/fonts/Schoolbell.ttf');
+
+  font-display: swap;
 }
 
 :root {
@@ -1060,19 +1068,7 @@ body {
   animation: 1s rainbowShadow 1s linear 1;
 }
 
-@keyframes slideOutUp {
-  0% {
-    top:0;
-  }
-
-  100% {
-    top:-150%;
-  }
-}
-
 #intro{
-  animation: 1s slideOutUp .5s cubic-bezier(.86,0,.07,1) 1;
-  animation-fill-mode: forwards;
   min-height: 100dvh;
   height: 100dvh;
   max-height: 100dvh;
@@ -1084,6 +1080,7 @@ body {
 
 #bg-blobs > img {
   image-rendering: optimizeQuality;
+  will-change: transform;
 }
 
 #bg_blob_1,

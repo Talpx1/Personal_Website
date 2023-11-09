@@ -8,8 +8,8 @@ module.exports = {
         "dark": "#040F0F",
       },
       fontFamily: {
-        primary: ['CascadiaMono', 'monospace', 'Courier New'],
-        accent: ['Schoolbell', 'Helvetica', 'sans-serif'],
+        primary: ['CascadiaMono', 'Courier New', 'Courier', 'monospace'],
+        accent: ['Schoolbell', 'Bradley Hand', 'cursive', 'Apple Chancery', 'Comic Sans MS', 'Comic Sans'],
       },
       width: {
         "3/1": "width: 300%"
