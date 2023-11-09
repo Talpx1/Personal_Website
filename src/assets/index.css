@@ -94,7 +94,7 @@ body {
     filter: url(#svg_filter);
 }
 
-#bg-blobs > img {
+#bg-blobs > picture {
     image-rendering: optimizeQuality;
     will-change: transform;
 }

@@ -11,20 +11,35 @@
         </defs>
     </svg>
 
-    <img 
-        src="/assets/images/bg_blobs/blob_cursor.png" 
-        id="cursor_blob" 
-        class="hidden xl:block h-auto absolute z-10 mix-blend-overlay dark:mix-blend-difference top-0 left-0 brightness-0 dark:brightness-100"
-        alt=""
-    />
+    <picture id="cursor_blob" class="hidden xl:block h-auto absolute z-10 mix-blend-overlay dark:mix-blend-difference top-0 left-0 brightness-0 dark:brightness-100">
+        <source srcset="/assets/images/bg_blobs/blob_cursor.webp" type="image/webp">
+        <source srcset="/assets/images/bg_blobs/blob_cursor.png" type="image/png">
+        <img src="/assets/images/bg_blobs/blob_cursor.png" alt="">
+    </picture>
         
-    <img src="/assets/images/bg_blobs/blob_1.png" id="bg_blob_1" class="h-auto absolute z-0" alt=""/>
+    <picture id="bg_blob_1" class="h-auto absolute z-0">
+        <source srcset="/assets/images/bg_blobs/blob_1.webp" type="image/webp">
+        <source srcset="/assets/images/bg_blobs/blob_1.png" type="image/png">
+        <img src="/assets/images/bg_blobs/blob_1.png" alt="">
+    </picture>
 
-    <img src="/assets/images/bg_blobs/blob_2.png" id="bg_blob_2" class="h-auto absolute z-0" alt=""/>
+    <picture id="bg_blob_2" class="h-auto absolute z-0">
+        <source srcset="/assets/images/bg_blobs/blob_2.webp" type="image/webp">
+        <source srcset="/assets/images/bg_blobs/blob_2.png" type="image/png">
+        <img src="/assets/images/bg_blobs/blob_2.png" alt="">
+    </picture>
 
-    <img src="/assets/images/bg_blobs/blob_3.png" id="bg_blob_3" class="h-auto absolute z-0" alt=""/>
+    <picture id="bg_blob_3" class="h-auto absolute z-0">
+        <source srcset="/assets/images/bg_blobs/blob_3.webp" type="image/webp">
+        <source srcset="/assets/images/bg_blobs/blob_3.png" type="image/png">
+        <img src="/assets/images/bg_blobs/blob_3.png" alt="">
+    </picture>
 
-    <img src="/assets/images/bg_blobs/blob_4.png" id="bg_blob_4" class="h-auto absolute z-0" alt=""/>
+    <picture id="bg_blob_4" class="h-auto absolute z-0">
+        <source srcset="/assets/images/bg_blobs/blob_4.webp" type="image/webp">
+        <source srcset="/assets/images/bg_blobs/blob_4.png" type="image/png">
+        <img src="/assets/images/bg_blobs/blob_4.png" alt="">
+    </picture>
 
 
 </div>
