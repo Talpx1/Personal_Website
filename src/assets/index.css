@@ -107,7 +107,14 @@ body {
 }
 
 #bg-blobs > img {
-    image-rendering: optimizeSpeed;
+    image-rendering: optimizeQuality;
+}
+
+#bg_blob_1,
+#bg_blob_2,
+#bg_blob_3,
+#bg_blob_4{
+    scale: 3;
 }
 
 #bg_blob_1{
@@ -236,16 +243,16 @@ body {
 
 @keyframes noise{
     0%, 100% {
-        transform: translate(34vw, 56vh);
+        transform: translate(123vw, 23vh);
     }
     25% {
-        transform: translate(43vw, -23vh);
+        transform: translate(45vw, -47vh);
     }
     50% {
-        transform: translate(-54vw, 13vh);
+        transform: translate(-103vw, 68vh);
     }
     75% {
-        transform: translate(-68vw, 98vh);
+        transform: translate(-12vw, 119vh);
     }
 }
 
@@ -258,9 +265,8 @@ body {
     background-image: url('../assets/images/noise.png');
     background-repeat: repeat;
     opacity: .25;
-    animation: noise 2s steps(10) infinite;
+    animation: noise 2s steps(8) infinite;
     pointer-events: none;
-    background-position: center center;
     image-rendering: optimizeSpeed;
 }
 
