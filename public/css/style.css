@@ -1212,34 +1212,35 @@ body {
 
 @keyframes noise{
   0%, 100% {
-    transform: translate(100vw, 100vh);
+    transform: translate(34vw, 56vh);
   }
 
   25% {
-    transform: translate(234vw, -389vh);
+    transform: translate(43vw, -23vh);
   }
 
   50% {
-    transform: translate(-567vw, 161vh);
+    transform: translate(-54vw, 13vh);
   }
 
   75% {
-    transform: translate(-435vw, 329vh);
+    transform: translate(-68vw, 98vh);
   }
 }
 
 #noise{
-  width: 2000vw;
-  height: 2000vh;
+  width: 500vw;
+  height: 500vh;
   position: fixed;
-  left: -1000vw;
-  top: -1000vh;
+  left: -250vw;
+  top: -250vh;
   background-image: url('../assets/images/noise.png');
   background-repeat: repeat;
   opacity: .25;
   animation: noise 2s steps(10) infinite;
   pointer-events: none;
   background-position: center center;
+  image-rendering: optimizeSpeed;
 }
 
 #cursor{
