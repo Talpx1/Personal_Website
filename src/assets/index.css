@@ -102,9 +102,12 @@ body {
     max-height: 100dvh;
 }
 
-#bg-blobs > svg {
-    filter: drop-shadow(0 0 0.10rem rgba(255, 255, 255, 0.2));
-    image-rendering: optimizeSpeed;
+#bg-blobs {
+    filter: url(#svg_filter);
+}
+
+#bg-blobs > img {
+    image-rendering: optimizeQuality;
 }
 
 #bg_blob_1{
@@ -249,9 +252,10 @@ body {
     top: -150%;
     background-image: url('../assets/images/noise.png');
     background-repeat: repeat;
-    opacity: .2;
+    opacity: .25;
     animation: noise 2s steps(45) infinite;
     pointer-events: none;
+    background-position: 0 0;
 }
 #cursor{
     transition: width 150ms;
