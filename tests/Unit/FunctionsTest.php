@@ -12,8 +12,8 @@ describe("translate", function() {
 
     it('replaces placeholders when tags are passed', function () {
         app()->setLocale('en');
-        expect(t('hi_im_simone', '<span class="test1">'))->toBeString()->toBe('Hi, I\'m <span class="test1">Simone</span> :)'); 
-        expect(t('hi_im_simone', '<div class="test2">'))->toBeString()->toBe('Hi, I\'m <div class="test2">Simone</div> :)'); 
+        expect(t('hi_im_simone', '<span class="test1">'))->toBeString()->toBe('Hi, I\'m <span class="test1">Simone</span>'); 
+        expect(t('hi_im_simone', '<div class="test2">'))->toBeString()->toBe('Hi, I\'m <div class="test2">Simone</div>'); 
     });
 
     it('returns the key if no translation is found', function () {
