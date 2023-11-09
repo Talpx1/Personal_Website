@@ -2,7 +2,7 @@
 
 <div id='bg-blobs' class="fixed min-w-full min-h-screen max-w-full max-h-screen -z-20 overflow-hidden left-0 top-0 flex justify-center items-center">
     
-    <svg xmlns="http://www.w3.org/2000/svg" height="100vh" width="100wv">
+    <svg xmlns="http://www.w3.org/2000/svg" height="100vh" width="100vw">
         <defs>
         <filter id="svg_filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">            
             <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" x="0%" y="0%" width="100%" height="100%" in="blur" result="colormatrix"/>
