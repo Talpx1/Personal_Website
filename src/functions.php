@@ -1,8 +1,10 @@
 <?php declare(strict_types=1);
 
 use SC\App;
+use function Safe\preg_match;
+use function Safe\realpath;
 
-function t($key, ...$tags): string {
+function t(string $key, string ...$tags): string {
     $translations = require(srcPath('lang')."/".app()->locale.".php");
 
     $translation = $translations[$key] ?? $key;
@@ -28,11 +30,13 @@ function srcPath(string $path=""): string {
     return appPath("src/{$path}");
 }
 
+/** @param array<string, mixed> $params */
 function partial(string $name, array $params = []): void {
     extract($params);
     require srcPath("views/partials/{$name}.partial.php");
 }
 
+/** @param array<string, mixed> $params */
 function view(string $name, array $params = []): void {
     extract($params);
     require srcPath("views/{$name}.view.php");

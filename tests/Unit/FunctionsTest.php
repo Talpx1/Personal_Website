@@ -1,4 +1,6 @@
 <?php
+use function Safe\ob_start;
+use function Safe\realpath;
 
 describe("translate", function() {
     beforeEach(fn() => app());

@@ -1,0 +1,28 @@
+includes:
+    - vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
+parameters:
+    level: 8
+    paths:
+        - src/
+    ignoreErrors:
+        -
+            message: '#Call to an undefined method Pest\\PendingCalls\\TestCall::[a-zA-Z0-9\\_]+\(\)#'
+            path: tests/*
+        -
+            message: '#Call to an undefined method Pest\\PendingCalls\\TestCall\\|Pest\\Support\\HigherOrderTapProxy::[a-zA-Z0-9\\_]+\(\)#'
+            path: tests/*
+        -
+            message: '#Undefined variable: \$this#'
+            path: tests/*
+        -
+            message: '#Function assertDatabaseMissingUser not found\.#'
+            path: tests/*
+        -
+            message: '#Function assertDatabaseHasUser not found\.#'
+            path: tests/*
+        -
+            message: '#Function actingAsAdmin not found\.#'
+            path: tests/*
+        -
+            message: '#Function actingAsSuperAdmin not found\.#'
+            path: tests/*
