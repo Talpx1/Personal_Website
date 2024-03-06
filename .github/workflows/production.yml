@@ -21,7 +21,7 @@ jobs:
 
     - name: Cache Composer packages
       id: composer-cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: vendor
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
@@ -66,7 +66,7 @@ jobs:
       run: mv ./public/ ./www/
 
     - name: FTP Deploy
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USER }}
@@ -78,8 +78,14 @@ jobs:
           ./tests
           **/tests/**
           **/.gitignore
+          **/composer.json
+          **/composer.lock
+          **/package.json
+          **/package.lock
+          **/phpstan.neon
           **/phpunit.xml
           **/start_dev.sh
+          **/tailwind.config.js
           **/DOCKER_ENV
           **/docker_tag
           **/output.log
