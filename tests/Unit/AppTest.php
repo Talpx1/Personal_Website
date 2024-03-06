@@ -4,6 +4,8 @@ use SC\Http\Middlewares\Contracts\Middleware;
 use function Safe\ob_start;
 use function Safe\realpath;
 
+afterEach(fn()=>App::dispose());
+
 describe("singleton", function() {
     it('throws if instantiated with new keyword', function () {
         new App(); // @phpstan-ignore-line
@@ -107,16 +109,16 @@ describe("locale", function() {
         App::dispose();
     })->with([["it", "it-it"], ["en", "en-us"]]);
 
-    it('returns the default locale with country if the locale with country does not exists for the current locale', function () {
-        //TODO: impossible to test without configs
-    });
+    //TODO: impossible to test without configs
+    // it('returns the default locale with country if the locale with country does not exists for the current locale', function () {
+    // });
 
     it('can switch between locales', function () {
         $app = App::instance();
 
         $app->setLocale("en");
 
-        expect($app->alternateLocale())->toBe("en");
+        expect($app->alternateLocale())->toBe("it");
     });
 });
 
