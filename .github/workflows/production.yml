@@ -16,6 +16,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.3
+        tools: composer:v2
+
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
 
@@ -47,8 +53,11 @@ jobs:
       with:
         node-version: 20
     
-    - name: Setup Composer
-      uses: php-actions/composer@v6
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.3
+        tools: composer:v2
 
     - name: Vendor Permissions
       run: sudo chmod -R 777 ./vendor
