@@ -13,7 +13,7 @@ final class Router {
 
     /** @param RouteList $routes */
     public function __construct(array $routes = []) {
-        $this->routes = $routes ?: require_once srcPath("Http/Routing/routes.php");
+        $this->routes = $routes ?: require srcPath("Http/Routing/routes.php");
     }
 
     public function resolve(string $uri): void {

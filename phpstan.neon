@@ -12,6 +12,9 @@ parameters:
             message: '#Call to an undefined method Pest\\PendingCalls\\TestCall\\|Pest\\Support\\HigherOrderTapProxy::[a-zA-Z0-9\\_]+\(\)#'
             path: tests/*
         -
+            message: '#Call to an undefined method Pest\\Expectation<\(Closure\)\|null>::toSee\(\).#'
+            path: tests/*
+        -
             message: '#Undefined variable: \$this#'
             path: tests/*
         -

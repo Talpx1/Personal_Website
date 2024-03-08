@@ -1,4 +1,6 @@
 <?php
+use SC\Tests\TestCase;
+use function Safe\ob_start;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,16 @@
 
 expect()->extend('toBeOne', function () {
     return $this->toBe(1);
+});
+
+expect()->extend('toSee', function (string $expected) {
+    ob_start();
+    ($this->value)();
+    $content = ob_get_clean();
+
+    expect($content)->toContain($expected);
+
+    return $this;
 });
 
 /*
