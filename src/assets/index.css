@@ -285,3 +285,21 @@ html:not(.dark) #cursor.intersecting{
 html *.force-hidden {
     display: none !important;
 }
+
+@layer components {
+    .article-page article section {
+        @apply flex flex-col items-center           
+    }
+
+    .article-page article h2 {
+        @apply font-bold text-xl lg:text-2xl py-8
+    }
+
+    .article-page article h3 {
+        @apply font-bold py-4
+    }        
+
+    .article-page article p {
+        max-width: 70ch;
+    }
+}

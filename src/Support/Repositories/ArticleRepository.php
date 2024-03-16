@@ -14,6 +14,19 @@ class ArticleRepository {
     }
 
     /** 
+     * @return Article 
+     */
+    public function findByName(string $name): ?Article {
+        foreach($this->allAsFiles() as $file){
+            if(str_contains($file, $name)) {
+                return new Article($file, $this->type);
+            }
+        }
+
+        return null;
+    }
+
+    /** 
      * @return Article[] 
      */
     public function latest(int $amount): array {

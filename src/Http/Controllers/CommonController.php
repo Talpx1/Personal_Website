@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
 namespace SC\Http\Controllers;
-use SC\Support\Facades\Article;
+
 use SC\Support\Facades\Article\PracticalArticle;
 use SC\Support\Facades\Article\TechnicalArticle;
 

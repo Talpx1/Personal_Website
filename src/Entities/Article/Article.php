@@ -2,6 +2,8 @@
 
 namespace SC\Entities\Article;
 
+use function Safe\file_get_contents;
+
 class Article {
 
     public readonly int $number;
@@ -17,7 +19,7 @@ class Article {
 
         $this->title = str_replace("_", " ", $file_name);
         $this->file = appPath("articles/{$type}/{$article_name}");
-        $this->link = "/blog/article/{$file_name}";
+        $this->link = "/blog/article/{$type}/{$file_name}";
         $this->type = $type;
     }
 
@@ -31,6 +33,10 @@ class Article {
 
     public function titleForList(): string {
         return "#{$this->number} - {$this->formattedTitle()}";
+    }
+
+    public function getContent(): string {
+        return file_get_contents($this->file);
     }
 
 }

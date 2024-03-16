@@ -17,4 +17,16 @@ return [
     "toggle_dark_mode" => "Toggle dark mode",
     "not_found" => "Not Found",
     "not_found_text" => "👽: not many tourists visit this place... fancy a kiwi? 🥝",
+    "practical_articles" => "<0>Practical</0> Articles",
+    "technical_articles" => "<0>Technical</0> Articles",
+    "blog_description" => 
+        <<<TXT
+        <1>Welcome* to my <0>blog</0>! The articles you will find will mainly be about <0>software development</0>, mostly using <0>PHP</0> and <0>Laravel</0>.</1>
+        <1>If you are not a technical person or a developer, don't run away! Some articles were made just for you :)</1>
+        <1>This blog is divided into two macro categories: <0>practical</0> and <0>technical</0>.</1>
+        <1>Practical articles are aimed at a non-technical audience who is looking for information about a product or service, without going into technical specifications. In these articles, real examples are used to allow the reader to make informed choices regarding their needs.</1>
+        <1>Technical articles, on the contrary, are designed for a technical audience (and who would have thought) and go into detail on the topic, often touching on fields purely related to software development and coding, without being linked to the concept of the final product. They feature <0>source code</0> and software development terminologies.</1>
+        TXT,
+    "technical" => "technical",
+    "practical" => "practical",
 ];
