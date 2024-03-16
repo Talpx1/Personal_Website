@@ -24,7 +24,13 @@ final class Router {
 
         app()->setCurrentRoute($route);
 
-        [$controller, $method] = $this->routes[$route];
+        [$controller, $method] = $this->routes[$route] ?? [null, null];
+
+        if(is_null($controller)) {
+            http_response_code(404);
+            view('errors/404');
+            return;
+        }
 
         (new $controller)->{$method}();
     }

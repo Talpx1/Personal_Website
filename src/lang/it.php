@@ -14,5 +14,6 @@ return [
     "SPACE" => "SPAZIO",
     "work_in_progress" => "Ciao, ci sto ancora lavorando. Ripassa più avanti!",
     "meta_description" => "Simone Cerruti, un full-stack developer dall'Italia, con una forte passione per PHP & Laravel.",
-    "toggle_dark_mode" => "Alterna modalità chiara/scura"
+    "not_found" => "Non Trovato",
+    "not_found_text" => "👽: non passano molti turisti da queste parti... vuoi un kiwi? 🥝",
 ];

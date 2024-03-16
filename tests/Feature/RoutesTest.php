@@ -23,3 +23,7 @@ test("'/projects' routes to home page", function() {
     expect(fn() => (new Router)->resolve("/projects"))->toSee('projects-page');
 });
 
+test("non existing route shows 404 page", function() {
+    expect(fn() => (new Router)->resolve("/not_found_route"))->toSee('404-page');
+});
+

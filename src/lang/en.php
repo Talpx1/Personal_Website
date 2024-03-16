@@ -14,5 +14,7 @@ return [
     "SPACE" => "SPACE",
     "work_in_progress" => "Hi, I'm still working on this. Check back later!",
     "meta_description" => "Simone Cerruti, a full-stack developer from Italy. PHP & Laravel enthusiast.",
-    "toggle_dark_mode" => "Toggle dark mode"
+    "toggle_dark_mode" => "Toggle dark mode",
+    "not_found" => "Not Found",
+    "not_found_text" => "👽: not many tourists visit this place... fancy a kiwi? 🥝",
 ];

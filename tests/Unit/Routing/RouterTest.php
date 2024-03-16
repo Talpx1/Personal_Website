@@ -71,4 +71,26 @@ describe("resolve", function() {
         App::dispose();
     });
 
+    it('sets http status as 404 if route cant be resolved', function () {
+        app()->setLocale("it");
+
+        $router = new Router();
+
+        \Safe\ob_start();
+        $router->resolve("/not_found_route");
+        \Safe\ob_end_clean();
+
+        expect(http_response_code())->toEqual(404);
+
+        App::dispose();
+    });
+
+    it('output 404 if route cant be resolved', function () {
+        app()->setLocale("it");
+
+        expect(fn() => (new Router)->resolve("/not_found_route"))->toSee('404-page');
+
+        App::dispose();
+    });
+
 });
