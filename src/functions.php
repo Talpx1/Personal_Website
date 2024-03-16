@@ -45,3 +45,7 @@ function view(string $name, array $params = []): void {
 function app(): App {
     return App::instance();
 }
+
+function segment(int $index): ?string { //TODO: test
+    return explode("/", app()->currentRoute())[$index+1] ?? null;
+}
