@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<?= app()->locale ?>">
 <?php partial('head', ['title' => $title]) ?>
-<body class="home-page page-lang-<?= app()->locale ?> flex flex-col justify-between font-primary overflow-hidden m-0 border-0 border-none py-0 px-5 lg:px-20 text-dark bg-light dark:text-light dark:bg-dark home-page">
+<body class="home-page page-lang-<?= app()->locale ?> flex flex-col justify-between font-primary overflow-hidden m-0 border-0 border-none py-0 text-dark bg-light dark:text-light dark:bg-dark">
     
     <?php partial('intro') ?>
     
@@ -9,7 +9,7 @@
     
     <?php partial('bg_blobs') ?>
     
-    <main class="text-center flex flex-col content-center items-center justify-center grow">
+    <main class="text-center flex flex-col content-center items-center justify-center grow px-5 lg:px-20">
         <div class="flex flex-col content-center gap-28 grow justify-center">
             <div class="flex flex-col justify-center gap-5">
                 <h1 class="font-bold whitespace-nowrap text-2xl lg:text-4xl tracking-widest"><?= t("hi_im_simone", '<span class="whitespace-nowrap font-accent text-4xl lg:text-6xl rainbow-underline px-1">') ?> :)</h1>

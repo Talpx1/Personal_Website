@@ -1,4 +1,4 @@
-<footer class="flex flex-col justify-between py-5 content-center items-center gap-10">
+<footer class="flex flex-col justify-between py-5 content-center items-center gap-10 px-5 lg:px-20">
     <nav class="flex flex-col lg:flex-row gap-3 lg:gap-0 lg:justify-between items-center w-fit lg:w-full">
         <div class="w-full lg:w-fit flex lg:flex-1 justify-start lg:justify-start">
             <a href="mailto:hello@simonecerruti.com" title="Email" 
