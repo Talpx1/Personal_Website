@@ -17,7 +17,7 @@
         <section class="flex flex-col gap-8 text-center" style="max-width: 600px;">
             <p><small>you@simonecerruti.com:/blog$</small></p>
             <h1 class="text-6xl font-bold"><?= $title ?></h1>
-            <div><?= t('blog_description', '<span class="text-2xl font-accent">', '<p class="my-4">') ?></div>
+            <div class="text-left"><?= t('blog_description', '<span class="text-2xl font-accent">', '<p class="my-4">') ?></div>
         </section>
 
         <section class="flex flex-col gap-4 grow">
